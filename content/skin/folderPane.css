@@ -1,0 +1,92 @@
+/*————————————————————————————————————————————————————————
+                    Folder Pane
+  All color-scheme differences handled by tokens.css.
+————————————————————————————————————————————————————————*/
+
+:root,
+body,
+#folderTree {
+	--primary-fill: color-mix(in srgb, var(--icon-default) 20%, transparent);
+	--primary-stroke: var(--icon-default);
+
+	--folder-color-inbox: var(--primary-red-700);
+	--folder-color-draft: var(--primary-blue-500);
+	--folder-color-sent: var(--primary-blue-500);
+	--folder-color-archive: var(--primary-blue-500);
+	--folder-color-spam: var(--primary-red-300);
+	--folder-color-trash: var(--primary-black);
+	--folder-color-template: var(--primary-blue-300);
+	--folder-color-newsletter: var(--primary-orange-700);
+	--folder-color-rss: var(--primary-orange-700);
+	--folder-color-outbox: var(--primary-violet-500);
+	--folder-color-folder: var(--primary-yellow-700);
+	--folder-color-folder-filter: var(--primary-green-700);
+	--folder-color-folder-rss: var(--primary-orange-700);
+
+	--new-folder-color: var(--selection-text);
+	--new-focused-folder-color: var(--icon-default);
+
+	--sidebar-text-color: var(--text-primary);
+	--sidebar-highlight-text-color: var(--selection-text);
+	--sidebar-highlight-border-color: var(--folder-hover-border);
+	--sidebar-highlight-background-color: var(--folder-selected-bg);
+}
+
+#folderTree treechildren::-moz-tree-indentation {
+	width: 18px;
+}
+
+treechildren::-moz-tree-row(modeHeader),
+:root[lwt-tree] treechildren::-moz-tree-row(modeHeader, hover),
+:root[lwt-tree]
+	treechildren::-moz-tree-row(modeHeader, selected, focus, current),
+:root[lwt-tree-brighttext] treechildren::-moz-tree-row(modeHeader, hover),
+:root[lwt-tree-brighttext]
+	treechildren::-moz-tree-row(modeHeader, selected, focus, current) {
+	color: var(--mode-header-text);
+	background-color: var(--mode-header-bg);
+	padding: 4px 4px;
+	margin: 0px 0px;
+	margin-bottom: 2px;
+	border-radius: 0px;
+	border-block: none;
+	border-inline: none;
+	border-bottom: 1px solid var(--mode-header-border);
+}
+
+#folderTree > treechildren::-moz-tree-row {
+	height: 2rem;
+	margin: 2px 4px;
+	border-radius: 3px;
+	background-color: var(--folder-row-bg);
+	box-shadow:
+		0px -2px 0px 0px rgba(100, 100, 100, 0.1) inset,
+		0px 1px 1px 0px rgba(0, 0, 0, 0.05);
+}
+
+#folderTree treechildren::-moz-tree-row(hover),
+#folderTree > treechildren::-moz-tree-row(folderNameCol, hover) {
+	border: 1px solid var(--folder-hover-border);
+}
+
+#folderTree treechildren::-moz-tree-row(selected),
+#folderTree > treechildren::-moz-tree-row(folderNameCol, selected, focus) {
+	background-color: var(--folder-selected-bg);
+	border: 1px solid var(--folder-selected-border);
+	box-shadow:
+		0px -2px 0px 0px rgba(100, 100, 100, 0.1) inset,
+		0px 1px 1px 0px rgba(0, 0, 0, 0.05);
+}
+
+/* New Messages Text Color */
+:root
+	#folderTree:-moz-lwtheme
+	treechildren::-moz-tree-cell-text(folderNameCol, isServer-true, biffState-NewMail),
+:root
+	#folderTree:-moz-lwtheme
+	treechildren::-moz-tree-cell-text(folderNameCol, newMessages-true),
+:root
+	#folderTree:-moz-lwtheme
+	treechildren::-moz-tree-cell-text(folderNameCol, specialFolder-Inbox, newMessages-true) {
+	color: var(--new-msg-color);
+}

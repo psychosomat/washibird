@@ -1,0 +1,123 @@
+/*————————————————————————————————————————————————————————
+                    Today Pane
+  All color-scheme differences handled by tokens.css.
+————————————————————————————————————————————————————————*/
+
+#today-pane-panel {
+	color: var(--text-secondary);
+}
+
+/* Sidebar Header */
+#today-pane-panel > .sidebar-header {
+	height: 28px;
+	font-weight: bold;
+}
+
+/* Today Subpane */
+.today-subpane {
+	background: var(--surface-1);
+}
+
+/* Mini Day Image */
+#mini-day-image {
+	margin: 8px;
+}
+
+/* Agenda */
+.agenda-toolbar {
+	background: var(--surface-0);
+}
+
+#agenda {
+	color: var(--text-secondary);
+	background: var(--surface-1);
+	padding: 8px 8px;
+}
+
+.agenda-date-header {
+	background: var(--surface-5);
+	color: var(--text-secondary);
+}
+
+#agenda .agenda-listitem .agenda-listitem-details {
+	padding: 6px 6px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+#agenda:focus .agenda-listitem.selected .agenda-listitem-details {
+	color: var(--selection-text);
+	background: var(--surface-1);
+	border: 1px solid var(--border-default);
+}
+
+/* Tasks */
+#unifinder-task-edit-field {
+	margin: 4px 8px;
+}
+
+/* Border Fixes */
+#today-pane-panel:-moz-lwtheme > .sidebar-header,
+#today-pane-panel > .sidebar-header {
+	border-top: 1px solid var(--border-default);
+	border-bottom: 1px solid var(--border-default);
+}
+
+#today-pane-panel,
+.today-subpane {
+	border-bottom: 1px solid var(--border-default);
+}
+
+/* Buttons */
+#today-pane-panel toolbarbutton {
+	color: var(--icon-default);
+}
+
+#today-pane-panel toolbarbutton:hover,
+.miniday-nav-buttons:not([disabled="true"]):hover,
+#miniday-dropdown-button:not([disabled="true"]):hover,
+#today-pane-panel toolbarbutton:hover:active,
+.miniday-nav-buttons:not([disabled="true"]):hover:active,
+#miniday-dropdown-button:not([disabled="true"]):hover:active {
+	color: var(--icon-hover);
+	background: transparent;
+	border-color: transparent;
+	box-shadow: none;
+}
+
+#today-pane-panel toolbarbutton.today-closebutton {
+	border-radius: 8px;}
+
+#today-pane-panel toolbarbutton.today-closebutton:hover {
+	color: var(--icon-hover);
+	background: var(--surface-3);
+}
+
+#today-pane-panel toolbarbutton.today-closebutton:hover:active {
+	color: var(--text-secondary);
+	background: var(--surface-4);
+}
+
+#todaypane-new-event-button:not([disabled="true"]) {
+	padding: 3px 10px 4px 10px;
+	margin: 2px 8px;
+	border-radius: 8px;	font-weight: bold;
+	color: var(--btn-pill-color);
+	background-color: var(--btn-pill-bg);
+	border: 1px solid var(--border-rgba-subtle);
+	box-shadow: var(--shadow-pill);
+}
+
+#todaypane-new-event-button:not([disabled="true"]):hover {
+	color: var(--btn-pill-color);
+	background-color: var(--btn-pill-hover-bg);
+	border: 1px solid var(--border-rgba-subtle);
+	box-shadow: var(--shadow-pill);
+}
+
+#todaypane-new-event-button:not([disabled="true"]):hover:active {
+	color: var(--btn-pill-color);
+	background-color: var(--btn-pill-active-bg);
+	border: 1px solid var(--border-rgba-moderate);
+	box-shadow: var(--shadow-pill-active);
+}

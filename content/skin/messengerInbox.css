@@ -1,0 +1,197 @@
+@import url(quickFilterBar.css);
+
+/*————————————————————————————————————————————————————————
+                    Messenger Inbox
+  All color-scheme differences handled by tokens.css.
+————————————————————————————————————————————————————————*/
+
+/*——————— inbox header columns ———————*/
+#threadCols {
+	--sidebar-text-color: var(--text-primary);
+	--sidebar-highlight-text-color: var(--selection-text);
+	font-weight: bold;
+}
+
+treecol {
+	padding-inline: 4px;
+	margin-bottom: 4px;
+}
+
+#subjectCol[primary="true"] {
+	padding-inline-start: 40px;
+}
+
+treecolpicker {
+	margin-bottom: 4px;
+}
+
+:root:-moz-lwtheme treecol:not([hideheader="true"]),
+:root:-moz-lwtheme treecolpicker:not([hideheader="true"]) {
+	background-color: var(--treecol-bg);
+	border-bottom: 1px solid var(--treecol-border);
+}
+
+treecol,
+treecolpicker {
+	box-shadow: none;
+}
+
+richlistbox {
+	border: none;
+}
+
+/*——————— message list  ———————*/
+#threadTree > treechildren::-moz-tree-row {
+	margin: 1px 4px;
+	border-radius: 3px;
+}
+
+#threadTree > treechildren::-moz-tree-row(selected) {
+	color: var(--thread-selected-text);
+	margin: 1px 4px;
+	border-radius: 3px;
+}
+
+#threadTree > treechildren::-moz-tree-row(tagged) {
+	border-radius: 3px;
+}
+
+#threadTree > treechildren::-moz-tree-row(selected),
+#threadTree > treechildren::-moz-tree-row(hover) {
+	margin: 1px 4px;
+	border-radius: 3px;
+	background-color: var(--thread-selected-bg);
+	border: 1px solid var(--thread-selected-border);
+}
+
+#threadTree > treechildren::-moz-tree-cell-text(selected, untagged) {
+	color: var(--thread-selected-text);
+	font-weight: bold;
+}
+
+#threadTree > treechildren::-moz-tree-cell-text(unread) {
+	color: var(--thread-unread-text);
+}
+
+/*——————— column icons  ———————*/
+/* select  */
+treechildren::-moz-tree-image(selectCol) {
+	stroke: var(--icon-default);
+}
+
+treechildren::-moz-tree-image(selectCol, selected, focus) {
+	fill: var(--primary-green-700);
+	stroke: var(--primary-green-700);
+}
+
+/* delete */
+treechildren::-moz-tree-image(deleteCol, hover) {
+	fill: color-mix(in srgb, var(--primary-red-300) 10%, transparent);
+	stroke: var(--primary-red-300);
+}
+
+/* read */
+treechildren::-moz-tree-image(unreadButtonColHeader, unread) {
+	fill: color-mix(in srgb, var(--primary-green-700) 50%, transparent);
+	stroke: var(--primary-green-700);
+	fill-opacity: 1;
+}
+
+/* flag (star) */
+treechildren::-moz-tree-image(flaggedCol, hover) {
+	fill: color-mix(in srgb, var(--primary-yellow-700) 20%, transparent);
+	stroke: var(--primary-yellow-700);
+}
+
+treechildren::-moz-tree-image(flaggedCol, flagged) {
+	fill: var(--accent-1-secondary);
+	stroke: var(--accent-1-dark);
+}
+
+/* junkStatus */
+treechildren::-moz-tree-image(junkStatusCol, hover) {
+	fill: color-mix(in srgb, var(--primary-red-300) 10%, transparent);
+	stroke: var(--primary-red-300);
+}
+
+treechildren::-moz-tree-image(junkStatusCol, junk) {
+	fill: color-mix(in srgb, var(--primary-red-700) 70%, transparent);
+	stroke: var(--primary-red-900);
+}
+
+/* subject */
+treechildren::-moz-tree-image(subjectCol, replied) {
+	list-style-image: var(--icon-reply-col);
+	fill: var(--primary-blue-500);
+}
+
+treechildren::-moz-tree-image(subjectCol, forwarded) {
+	list-style-image: var(--icon-forward-col);
+	fill: var(--primary-violet-500);
+}
+
+treechildren::-moz-tree-image(subjectCol, redirected) {
+	list-style-image: var(--icon-redirect-col);
+	fill: var(--primary-orange-500);
+}
+
+treechildren::-moz-tree-image(subjectCol, replied, forwarded) {
+	list-style-image: var(--icon-reply-forward-col);
+	fill: var(--primary-violet-500);
+	stroke: var(--primary-blue-500);
+}
+
+treechildren::-moz-tree-image(subjectCol, replied, redirected) {
+	list-style-image: var(--icon-reply-redirect-col);
+	fill: var(--primary-orange-500);
+	stroke: var(--primary-blue-500);
+}
+
+treechildren::-moz-tree-image(subjectCol, forwarded, redirected) {
+	list-style-image: var(--icon-forward-redirect-col);
+	fill: var(--primary-violet-500);
+	stroke: var(--primary-orange-500);
+}
+
+treechildren::-moz-tree-image(subjectCol, replied, forwarded, redirected) {
+	list-style-image: var(--icon-reply-forward-redirect-col);
+	fill: var(--primary-violet-500);
+	stroke: var(--primary-blue-500);
+}
+
+treechildren::-moz-tree-image(subjectCol, new) {
+	list-style-image: var(--icon-notify);
+	fill: var(--primary-highlight-violet);
+	stroke: var(--primary-violet-500);
+}
+
+treechildren::-moz-tree-image(subjectCol, selected, focus) {
+	fill: var(--select-focus-text-color);
+	stroke: var(--select-focus-text-color);
+}
+
+/*——————— message content  ———————*/
+/* attachments */
+#attachmentName:hover {
+	color: var(--sidebar-highlight-text-color);
+	background: var(--selection-bg);
+	border-radius: 3px;
+}
+
+:root[lwt-tree] .attachmentList .attachmentItem {
+	color: var(--sidebar-highlight-text-color, var(--sidebar-text-color));
+}
+
+:root[lwt-tree] .attachmentList:hover .attachmentItem {
+	color: var(--accent-3);
+	background: var(--selection-bg);
+	border: 1px solid transparent;
+	border-radius: 3px;
+}
+
+:root[lwt-tree] .attachmentList:focus .attachmentItem[selected="true"] {
+	color: var(--accent-3-dark);
+	background: var(--selection-bg);
+	border: 1px solid var(--accent-3-secondary);
+	border-radius: 3px;
+}

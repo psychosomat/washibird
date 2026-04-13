@@ -1,0 +1,69 @@
+/*————————————————————————————————————————————————————————
+                    Message Header
+  All color-scheme differences handled by tokens.css.
+————————————————————————————————————————————————————————*/
+
+.message-header-container {
+	padding: 4px 18px 4px 8px;
+}
+
+.message-header-container,
+.message-header-extra-container {
+	row-gap: 8px;
+}
+
+.message-header-hide-label-column {
+	padding-inline-start: 18px;
+}
+
+:root[lwt-tree] #singleMessage,
+:root[lwt-tree] #attachmentView,
+:root[lwt-tree] #attachmentBar {
+	background-color: var(--surface-1);
+	color: var(--text-primary);
+}
+
+.header-recipient,
+.header-newsgroup,
+.header-message-id {
+	color: var(--text-primary);
+	font-weight: bold;
+	--message-header-field-offset: 2px 4px;
+}
+
+.header-recipient:hover,
+.header-newsgroup:hover,
+.header-message-id:hover {
+	color: var(--accent-3-dark);
+	background-color: var(--selection-bg);
+}
+
+.recipient-multi-line-name {
+	font-weight: bold;
+}
+
+.recipient-multi-line-address {
+	font-weight: normal;
+}
+
+#expandedsubjectBox {
+	color: var(--text-inverse);
+	font-weight: bold;
+}
+
+.recipient-avatar {
+	color: var(--text-inverse);
+	background: var(--accent-2-secondary);
+	border: 1px solid var(--primary-red-700);
+}
+
+/* Star */
+button.email-action-flagged.flagged {
+	fill: var(--accent-1-secondary);
+	stroke: var(--accent-1-dark);
+}
+
+/* Popups */
+.popup-panel-buttons-container > button {
+	padding: 6px 12px;
+}

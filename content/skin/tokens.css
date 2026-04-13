@@ -1,0 +1,574 @@
+/*————————————————————————————————————————————————————————
+           Semantic Design Tokens — Single Source of Truth
+  Light defaults here; dark overrides below.
+  Component files use ONLY these tokens (never primitives).
+————————————————————————————————————————————————————————*/
+
+:root {
+	/* — Surfaces — */
+	--surface-0: var(--primary-whiter);
+	--surface-1: var(--primary-white);
+	--surface-2: var(--primary-gray-10);
+	--surface-3: var(--primary-gray-20);
+	--surface-4: var(--primary-gray-30);
+	--surface-5: var(--primary-gray-60);
+	--surface-6: var(--primary-gray-80);
+
+	--background-color-canvas: var(--primary-gray-90);
+
+	/* — Text — */
+	--text-primary: var(--primary-gray-100);
+	--text-secondary: var(--primary-gray-70);
+	--text-muted: var(--primary-gray-50);
+	--text-inverse: var(--primary-white);
+	--text-heading: var(--primary-gray-60);
+	--text-disabled: var(--primary-gray-40);
+
+	/* — Borders — */
+	--border-default: var(--primary-gray-40);
+	--border-subtle: var(--primary-gray-30);
+	--border-strong: var(--primary-gray-60);
+	--border-transparent: transparent;
+	--border-rgba-subtle: rgba(0, 0, 0, 0.1);
+	--border-rgba-moderate: rgba(0, 0, 0, 0.3);
+	--border-rgba-strong: rgba(0, 0, 0, 0.5);
+
+	/* — Shadows — */
+	--shadow-inset-opacity: 0.1;
+	--shadow-outer-opacity: 0.15;
+	--shadow-inset-top: 0px -2px 0px 0px
+		rgba(0, 0, 0, var(--shadow-inset-opacity)) inset;
+	--shadow-outer: 0px 1px 1px 1px rgba(0, 0, 0, var(--shadow-outer-opacity));
+	--shadow-pill: var(--shadow-inset-top), var(--shadow-outer);
+	--shadow-active-inset: 0px 0px 0px 2px
+		rgba(0, 0, 0, var(--shadow-inset-opacity)) inset;
+	--shadow-active-outer: 0px 1px 1px 0px
+		rgba(0, 0, 0, var(--shadow-outer-opacity));
+	--shadow-pill-active: var(--shadow-active-inset), var(--shadow-active-outer);
+
+	/* — Icons — */
+	--icon-default: var(--primary-gray-60);
+	--icon-hover: var(--primary-gray-80);
+	--icon-attention: var(--primary-blue-700);
+
+	/* — Button Pill — */
+	--btn-pill-bg: var(--primary-gray-60);
+	--btn-pill-hover-bg: var(--primary-gray-80);
+	--btn-pill-active-bg: var(--primary-gray-80);
+	--btn-pill-checked-bg: var(--primary-blue-300);
+	--btn-pill-color: var(--primary-white);
+	--btn-pill-icon-fill: var(--primary-gray-40);
+
+	/* — Button Flat — */
+	--btn-flat-hover-bg: color-mix(
+		in srgb,
+		var(--primary-gray-40) 34%,
+		transparent
+	);
+	--btn-flat-hover-border: color-mix(
+		in srgb,
+		var(--primary-gray-60) 30%,
+		transparent
+	);
+	--btn-flat-active-bg: color-mix(
+		in srgb,
+		var(--primary-gray-50) 55%,
+		transparent
+	);
+	--btn-flat-active-border: color-mix(
+		in srgb,
+		var(--primary-gray-70) 35%,
+		transparent
+	);
+
+	/* — Mail Toolbox Buttons — */
+	--mailtool-hover-bg: color-mix(
+		in srgb,
+		var(--primary-gray-30) 55%,
+		transparent
+	);
+	--mailtool-hover-border: color-mix(
+		in srgb,
+		var(--primary-gray-40) 65%,
+		transparent
+	);
+
+	/* — Search / Input — */
+	--input-bg: var(--primary-gray-10);
+	--input-text: var(--primary-gray-60);
+	--input-border: var(--primary-gray-40);
+	--input-focus-text: var(--primary-black);
+	--input-focus-bg: var(--primary-white);
+	--input-focus-border: var(--primary-gray-60);
+	--input-focus-ring: var(--primary-gray-40);
+
+	/* — Panels / Menus — */
+	--panel-bg: var(--primary-gray-10);
+	--panel-text: var(--primary-gray-80);
+	--panel-border: var(--primary-gray-40);
+	--panel-hover-bg: var(--primary-gray-30);
+	--panel-active-bg: var(--primary-gray-40);
+	--panel-dimmed: var(--primary-gray-30);
+	--panel-dimmed-further: var(--primary-gray-40);
+	--panel-disabled: var(--primary-gray-50);
+	--panel-description: var(--primary-gray-60);
+
+	/* — Sidebar / Folder Pane — */
+	--sidebar-bg: var(--primary-gray-20);
+	--sidebar-text: var(--primary-gray-100);
+	--sidebar-highlight-bg: var(--primary-white);
+	--sidebar-highlight-text: var(--primary-black);
+	--sidebar-highlight-border: var(--primary-gray-50);
+	--sidebar-row-bg: var(--primary-gray-30);
+
+	/* — Thread / Message List — */
+	--thread-selected-bg: var(--primary-gray-30);
+	--thread-selected-border: var(--primary-gray-50);
+	--thread-selected-text: var(--primary-black);
+	--thread-hover-bg: var(--primary-gray-30);
+	--thread-hover-border: var(--primary-gray-50);
+	--thread-unread-text: var(--primary-gray-100);
+
+	/* — Tree Row (cartoon shadow) — */
+	--tree-row-shadow-inset: 0px -2px 0px 0px rgba(100, 100, 100, 0.1) inset;
+	--tree-row-shadow-outer: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
+	--tree-row-shadow: var(--tree-row-shadow-inset), var(--tree-row-shadow-outer);
+
+	/* — Calendar View — */
+	--cal-view-bg: var(--primary-white);
+	--cal-view-text: var(--primary-gray-100);
+	--cal-view-border: var(--primary-gray-40);
+	--cal-today-bg: color-mix(
+		in srgb,
+		var(--primary-highlight-blue) 20%,
+		var(--primary-white)
+	);
+	--cal-today-label-bg: var(--primary-highlight-blue);
+	--cal-today-label-text: var(--primary-blue-900);
+	--cal-weekend-bg: color-mix(
+		in srgb,
+		var(--primary-highlight-green) 20%,
+		var(--primary-white)
+	);
+	--cal-selected-bg: color-mix(
+		in srgb,
+		var(--primary-highlight-yellow) 50%,
+		var(--primary-white)
+	);
+	--cal-selected-text: var(--primary-black);
+	--cal-header-selected-bg: color-mix(
+		in srgb,
+		var(--primary-highlight-yellow) 40%,
+		var(--primary-white)
+	);
+	--cal-other-month-bg: var(--primary-gray-20);
+	--cal-off-time-bg: color-mix(
+		in srgb,
+		var(--primary-highlight-blue) 40%,
+		var(--primary-white)
+	);
+	--cal-drag-bg: var(--primary-highlight-orange);
+	--cal-day-label-selected-bg: var(--primary-highlight-violet);
+	--cal-day-label-selected-text: var(--primary-black);
+	--cal-event-border-opacity: 0.2;
+	--cal-event-shadow-inset-opacity: 0.25;
+	--cal-event-selected-bg: hsl(43, 86%, 83%);
+	--cal-event-selected-text: var(--primary-gray-100);
+	--cal-now-indicator: var(--primary-red-700);
+
+	/* — Status Bar — */
+	--statusbar-bg: var(--primary-gray-30);
+	--statusbar-text: var(--primary-gray-70);
+
+	/* — Splitter — */
+	--splitter-color: var(--primary-gray-40);
+
+	/* — Accent Colors (3n cycle) — */
+	--accent-1: var(--primary-yellow-700);
+	--accent-2: var(--primary-red-500);
+	--accent-3: var(--primary-blue-500);
+	--accent-1-secondary: var(--primary-yellow-300);
+	--accent-2-secondary: var(--primary-red-300);
+	--accent-3-secondary: var(--primary-blue-300);
+	--accent-1-dark: var(--primary-yellow-900);
+	--accent-2-dark: var(--primary-red-900);
+	--accent-3-dark: var(--primary-blue-900);
+
+	/* — Selection — */
+	--selection-bg: var(--primary-highlight-blue);
+	--selection-text: var(--primary-black);
+
+	/* — Tab — */
+	--tab-text: var(--primary-gray-60);
+	--tab-hover-text: var(--primary-gray-90);
+	--tab-selected-bg: var(--primary-white);
+	--tab-border: var(--primary-gray-60);
+	--tab-hover-border: var(--primary-gray-90);
+	--tab-selected-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.1) inset;
+
+	/* — Spaces Toolbar — */
+	--spaces-bg: var(--primary-gray-30);
+	--spaces-text: var(--primary-gray-60);
+	--spaces-active-text: var(--primary-gray-100);
+
+	/* — Titlebar — */
+	--titlebar-text: var(--primary-gray-60);
+	--titlebar-btn-color: var(--primary-gray-80);
+	--titlebar-min-hover-bg: var(--primary-blue-500);
+	--titlebar-max-hover-bg: var(--primary-yellow-700);
+	--titlebar-close-hover-bg: var(--primary-red-700);
+
+	/* — Toolbox Accent — */
+	--toolbox-accent-bg: var(--primary-gray-30);
+
+	/* — Tab Close Button — */
+	--tab-close-hover-bg: var(--primary-gray-50);
+	--tab-close-hover-color: var(--primary-gray-100);
+	--tab-close-active-bg: var(--primary-gray-60);
+	--tab-close-active-color: var(--primary-gray-80);
+
+	/* — Folder Pane Header — */
+	--folderpane-header-bg: var(--primary-gray-10);
+	--folderpane-header-text: var(--primary-gray-80);
+	--folderpane-btn-color: var(--primary-gray-50);
+	--folderpane-btn-hover-color: var(--primary-black);
+
+	/* — Toolbar — */
+	--toolbar-bg: var(--primary-gray-10);
+	--toolbar-text: var(--primary-gray-50);
+	--toolbar-separator: var(--primary-gray-40);
+	--toolbar-field-bg: var(--primary-white);
+	--toolbar-field-border: var(--primary-gray-60);
+
+	/* — Inbox / Thread — */
+	--treecol-bg: var(--primary-gray-30);
+	--treecol-border: var(--primary-gray-40);
+	--thread-row-bg: var(--primary-gray-30);
+	--thread-row-border: var(--primary-gray-50);
+	--thread-selected-bg: var(--primary-gray-30);
+	--thread-selected-border: var(--primary-gray-50);
+	--thread-selected-text: var(--primary-black);
+	--thread-unread-text: var(--primary-gray-100);
+	--folder-row-bg: var(--primary-gray-30);
+	--folder-selected-bg: var(--primary-white);
+	--folder-selected-border: var(--primary-gray-40);
+	--folder-hover-border: var(--primary-gray-50);
+	--mode-header-bg: var(--primary-gray-10);
+	--mode-header-border: var(--primary-gray-40);
+	--mode-header-text: var(--primary-gray-100);
+	--new-msg-color: var(--primary-blue-900);
+	--recipient-avatar-bg: var(--primary-red-300);
+	--recipient-avatar-border: var(--primary-red-700);
+
+	/* — Search Bar — */
+	--search-text: var(--primary-gray-60);
+	--search-bg: var(--primary-gray-10);
+	--search-border: var(--primary-gray-40);
+	--search-hover-border: var(--primary-gray-60);
+	--search-focus-text: var(--primary-black);
+	--search-focus-bg: var(--primary-white);
+	--search-focus-border: var(--primary-gray-60);
+	--search-focus-ring: var(--primary-gray-40);
+
+	/* — Calendar — */
+	--cal-surface: var(--primary-white);
+	--cal-text: var(--primary-gray-100);
+	--cal-text-secondary: var(--primary-gray-80);
+	--cal-border: var(--primary-gray-40);
+	--cal-today-label: var(--primary-blue-900);
+	--cal-selected-label: var(--primary-yellow-900);
+	--cal-month-other-bg: var(--primary-gray-20);
+	--cal-day-selected-text: var(--primary-black);
+	--cal-timebar-color: var(--primary-red-700);
+	--cal-minimonth-bg: var(--primary-gray-10);
+	--cal-list-item-bg: var(--primary-gray-30);
+	--cal-list-item-border: var(--primary-gray-50);
+	--cal-list-item-text: var(--primary-gray-100);
+	--cal-list-selected-text: var(--primary-black);
+	--cal-nav-text: var(--primary-gray-80);
+	--cal-nav-hover: var(--primary-gray-100);
+	--cal-view-selected-bg: var(--primary-white);
+
+	/* — LW-theme overrides — */
+	--lwt-accent: var(--primary-gray-10);
+	--lwt-toolbar-bg: var(--primary-gray-30);
+	--lwt-text: var(--primary-gray-100);
+}
+
+/*————————————————————————————————————————————————————————
+                    Dark Mode
+————————————————————————————————————————————————————————*/
+@media (prefers-color-scheme: dark) {
+	:root {
+		/* — Surfaces — */
+		--surface-0: var(--primary-gray-90);
+		--surface-1: var(--primary-gray-70);
+		--surface-2: var(--primary-gray-90);
+		--surface-3: var(--primary-gray-80);
+		--surface-4: var(--primary-gray-60);
+		--surface-5: var(--primary-gray-30);
+		--surface-6: var(--primary-gray-50);
+
+		/* — Text — */
+		--text-primary: var(--primary-gray-10);
+		--text-secondary: var(--primary-gray-20);
+		--text-muted: var(--primary-gray-40);
+		--text-inverse: var(--primary-whiter);
+		--text-heading: var(--primary-gray-30);
+		--text-disabled: var(--primary-gray-50);
+
+		/* — Borders — */
+		--border-default: var(--primary-gray-50);
+		--border-subtle: var(--primary-gray-40);
+		--border-strong: var(--primary-gray-40);
+		--border-rgba-subtle: rgba(0, 0, 0, 0.2);
+		--border-rgba-moderate: rgba(0, 0, 0, 0.3);
+		--border-rgba-strong: rgba(0, 0, 0, 0.5);
+
+		/* — Shadows — */
+		--shadow-inset-opacity: 0.25;
+		--shadow-outer-opacity: 0.1;
+		--shadow-active-inset: 0px 0px 0px 2px rgba(0, 0, 0, 0.2) inset;
+		--shadow-active-outer: 0px 1px 1px 0px rgba(0, 0, 0, 0.35);
+
+		/* — Icons — */
+		--icon-default: var(--primary-gray-30);
+		--icon-hover: var(--primary-gray-10);
+		--icon-attention: var(--primary-blue-300);
+
+		/* — Button Pill — */
+		--btn-pill-bg: var(--primary-gray-30);
+		--btn-pill-hover-bg: var(--primary-gray-50);
+		--btn-pill-active-bg: var(--primary-gray-50);
+		--btn-pill-checked-bg: var(--primary-blue-900);
+		--btn-pill-color: var(--primary-white);
+		--btn-pill-icon-fill: var(--primary-white);
+
+		/* — Button Flat — */
+		--btn-flat-hover-bg: color-mix(
+			in srgb,
+			var(--primary-gray-40) 34%,
+			transparent
+		);
+		--btn-flat-hover-border: color-mix(
+			in srgb,
+			var(--primary-gray-60) 30%,
+			transparent
+		);
+		--btn-flat-active-bg: color-mix(
+			in srgb,
+			var(--primary-gray-50) 55%,
+			transparent
+		);
+		--btn-flat-active-border: color-mix(
+			in srgb,
+			var(--primary-gray-70) 35%,
+			transparent
+		);
+
+		/* — Mail Toolbox Buttons — */
+		--mailtool-hover-bg: color-mix(
+			in srgb,
+			var(--primary-gray-30) 55%,
+			transparent
+		);
+		--mailtool-hover-border: color-mix(
+			in srgb,
+			var(--primary-gray-40) 65%,
+			transparent
+		);
+
+		/* — Search / Input — */
+		--input-bg: var(--primary-gray-90);
+		--input-text: var(--primary-gray-30);
+		--input-border: var(--primary-gray-50);
+		--input-focus-text: var(--primary-white);
+		--input-focus-bg: var(--primary-black);
+		--input-focus-border: var(--primary-gray-40);
+		--input-focus-ring: var(--primary-gray-50);
+
+		/* — Panels / Menus — */
+		--panel-bg: var(--primary-gray-90);
+		--panel-text: var(--primary-gray-20);
+		--panel-border: var(--primary-gray-50);
+		--panel-hover-bg: var(--primary-gray-80);
+		--panel-active-bg: var(--primary-black);
+		--panel-dimmed: var(--primary-gray-50);
+		--panel-dimmed-further: var(--primary-gray-60);
+		--panel-disabled: var(--primary-gray-50);
+		--panel-description: var(--primary-gray-40);
+
+		/* — Sidebar / Folder Pane — */
+		--sidebar-bg: var(--primary-gray-90);
+		--sidebar-text: var(--primary-gray-10);
+		--sidebar-highlight-bg: var(--primary-gray-70);
+		--sidebar-highlight-text: var(--primary-whiter);
+		--sidebar-highlight-border: var(--primary-gray-40);
+		--sidebar-row-bg: var(--primary-gray-70);
+
+		/* — Thread / Message List — */
+		--thread-selected-bg: var(--primary-gray-60);
+		--thread-selected-border: var(--primary-gray-40);
+		--thread-selected-text: var(--primary-whiter);
+		--thread-hover-bg: var(--primary-gray-60);
+		--thread-hover-border: var(--primary-gray-40);
+		--thread-unread-text: var(--primary-whiter);
+
+		/* — Tree Row — */
+		--tree-row-shadow-inset: 0px -2px 0px 0px rgba(100, 100, 100, 0.3) inset;
+		--tree-row-shadow-outer: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
+
+		/* — Calendar View — */
+		--cal-view-bg: var(--primary-black);
+		--cal-view-text: var(--primary-gray-20);
+		--cal-view-border: var(--primary-gray-50);
+		--cal-today-bg: color-mix(
+			in srgb,
+			var(--primary-highlight-blue) 20%,
+			var(--primary-gray-90)
+		);
+		--cal-today-label-bg: var(--primary-highlight-blue);
+		--cal-today-label-text: var(--primary-blue-300);
+		--cal-weekend-bg: color-mix(
+			in srgb,
+			var(--primary-highlight-green) 20%,
+			var(--primary-gray-90)
+		);
+		--cal-selected-bg: color-mix(
+			in srgb,
+			var(--primary-highlight-yellow) 50%,
+			var(--primary-gray-90)
+		);
+		--cal-selected-text: var(--primary-white);
+		--cal-header-selected-bg: color-mix(
+			in srgb,
+			var(--primary-highlight-yellow) 40%,
+			var(--primary-gray-90)
+		);
+		--cal-other-month-bg: var(--primary-gray-90);
+		--cal-off-time-bg: color-mix(
+			in srgb,
+			var(--primary-highlight-blue) 40%,
+			var(--primary-gray-90)
+		);
+		--cal-drag-bg: var(--primary-highlight-orange);
+		--cal-day-label-selected-bg: var(--primary-highlight-violet);
+		--cal-day-label-selected-text: var(--primary-gray-20);
+		--cal-event-border-opacity: 0.3;
+		--cal-event-shadow-inset-opacity: 0.25;
+		--cal-event-selected-bg: var(--primary-yellow-900);
+		--cal-event-selected-text: var(--primary-white);
+		--cal-now-indicator: var(--primary-red-300);
+
+		/* — Status Bar — */
+		--statusbar-bg: var(--primary-black);
+		--statusbar-text: var(--primary-gray-20);
+
+		/* — Splitter — */
+		--splitter-color: var(--primary-gray-50);
+
+		/* — Accent Colors — */
+		--accent-1-secondary: var(--primary-yellow-900);
+		--accent-2-secondary: var(--primary-red-900);
+		--accent-3-secondary: var(--primary-blue-900);
+
+		/* — Selection — */
+		--selection-text: var(--primary-white);
+
+		/* — Tab — */
+		--tab-text: var(--primary-gray-40);
+		--tab-hover-text: var(--primary-gray-10);
+		--tab-selected-bg: var(--primary-gray-70);
+		--tab-border: var(--primary-gray-40);
+		--tab-hover-border: var(--primary-gray-10);
+		--tab-selected-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.5) inset;
+
+		/* — Spaces Toolbar — */
+		--spaces-bg: var(--primary-black);
+		--spaces-text: var(--primary-gray-30);
+		--spaces-active-text: var(--primary-white);
+
+		/* — Titlebar — */
+		--titlebar-text: var(--primary-gray-30);
+		--titlebar-btn-color: var(--primary-gray-30);
+		--titlebar-min-hover-bg: var(--primary-blue-900);
+		--titlebar-max-hover-bg: var(--primary-yellow-900);
+		--titlebar-close-hover-bg: var(--primary-red-900);
+
+		/* — Toolbox Accent — */
+		--toolbox-accent-bg: var(--primary-black);
+
+		/* — Tab Close Button — */
+		--tab-close-hover-bg: var(--primary-gray-60);
+		--tab-close-hover-color: var(--primary-gray-20);
+		--tab-close-active-bg: var(--primary-gray-50);
+		--tab-close-active-color: var(--primary-gray-40);
+
+		/* — Folder Pane Header — */
+		--folderpane-header-bg: var(--primary-gray-90);
+		--folderpane-header-text: var(--primary-white);
+		--folderpane-btn-color: var(--primary-gray-40);
+		--folderpane-btn-hover-color: var(--primary-gray-20);
+
+		/* — Toolbar — */
+		--toolbar-bg: var(--primary-gray-90);
+		--toolbar-text: var(--primary-whiter);
+		--toolbar-separator: var(--primary-gray-50);
+		--toolbar-field-bg: var(--primary-gray-10);
+		--toolbar-field-border: var(--primary-gray-50);
+
+		/* — Inbox / Thread — */
+		--treecol-bg: var(--primary-gray-100);
+		--treecol-border: var(--primary-gray-50);
+		--thread-row-bg: var(--primary-gray-60);
+		--thread-row-border: var(--primary-gray-40);
+		--thread-selected-bg: var(--primary-gray-60);
+		--thread-selected-border: var(--primary-gray-40);
+		--thread-selected-text: var(--primary-whiter);
+		--thread-unread-text: var(--primary-whiter);
+		--folder-row-bg: var(--primary-gray-70);
+		--folder-selected-bg: var(--primary-gray-60);
+		--folder-selected-border: var(--primary-gray-40);
+		--folder-hover-border: var(--primary-gray-40);
+		--mode-header-bg: var(--primary-gray-100);
+		--mode-header-border: var(--primary-gray-50);
+		--mode-header-text: var(--primary-gray-20);
+		--new-msg-color: var(--primary-blue-300);
+		--recipient-avatar-bg: var(--primary-red-700);
+		--recipient-avatar-border: var(--primary-red-900);
+
+		/* — Search Bar — */
+		--search-text: var(--primary-gray-30);
+		--search-bg: var(--primary-gray-90);
+		--search-border: var(--primary-gray-50);
+		--search-hover-border: var(--primary-gray-40);
+		--search-focus-text: var(--primary-white);
+		--search-focus-bg: var(--primary-black);
+		--search-focus-border: var(--primary-gray-40);
+		--search-focus-ring: var(--primary-gray-50);
+
+		/* — Calendar — */
+		--cal-surface: var(--primary-gray-90);
+		--cal-text: var(--primary-gray-20);
+		--cal-text-secondary: var(--primary-gray-20);
+		--cal-border: var(--primary-gray-50);
+		--cal-today-label: var(--primary-blue-300);
+		--cal-selected-label: var(--primary-yellow-300);
+		--cal-month-other-bg: var(--primary-gray-90);
+		--cal-day-selected-text: var(--primary-white);
+		--cal-timebar-color: var(--primary-red-300);
+		--cal-minimonth-bg: var(--primary-gray-90);
+		--cal-list-item-bg: var(--primary-gray-70);
+		--cal-list-item-border: var(--primary-gray-50);
+		--cal-list-item-text: var(--primary-gray-10);
+		--cal-list-selected-text: var(--primary-whiter);
+		--cal-nav-text: var(--primary-gray-20);
+		--cal-nav-hover: var(--primary-gray-10);
+		--cal-view-selected-bg: var(--primary-gray-70);
+
+		/* — LW-theme overrides — */
+		--lwt-accent: var(--primary-black);
+		--lwt-toolbar-bg: var(--primary-gray-70);
+		--lwt-text: var(--primary-gray-10);
+	}
+}

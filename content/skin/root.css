@@ -1,0 +1,246 @@
+/*————————————————————————————————————————————————————————
+                    Global Variables
+  All color-scheme differences handled by tokens.css.
+  No @media dark block needed here.
+————————————————————————————————————————————————————————*/
+
+:root,
+body,
+#messengerWindow {
+	/* — Thunderbird color variable mappings — */
+	--color-white: var(--primary-white);
+	--color-gray-10: var(--primary-gray-10);
+	--color-gray-20: var(--primary-gray-20);
+	--color-gray-30: var(--primary-gray-30);
+	--color-gray-40: var(--primary-gray-40);
+	--color-gray-50: var(--primary-gray-50);
+	--color-gray-60: var(--primary-gray-60);
+	--color-gray-70: var(--primary-gray-70);
+	--color-gray-80: var(--primary-gray-80);
+	--color-gray-90: var(--primary-gray-90);
+	--color-gray-100: var(--primary-gray-100);
+	--color-black: var(--primary-black);
+
+	--color-red-300: var(--primary-red-300);
+	--color-red-500: var(--primary-red-500);
+	--color-red-700: var(--primary-red-700);
+	--color-red-900: var(--primary-red-900);
+
+	--color-orange-300: var(--primary-orange-300);
+	--color-orange-500: var(--primary-orange-500);
+	--color-orange-700: var(--primary-orange-700);
+	--color-orange-900: var(--primary-orange-900);
+
+	--color-yellow-300: var(--primary-yellow-300);
+	--color-yellow-500: var(--primary-yellow-500);
+	--color-yellow-700: var(--primary-yellow-700);
+	--color-yellow-900: var(--primary-yellow-900);
+
+	--color-green-300: var(--primary-green-300);
+	--color-green-500: var(--primary-green-500);
+	--color-green-700: var(--primary-green-700);
+	--color-green-900: var(--primary-green-900);
+
+	--color-blue-300: var(--primary-blue-300);
+	--color-blue-500: var(--primary-blue-500);
+	--color-blue-700: var(--primary-blue-700);
+	--color-blue-900: var(--primary-blue-900);
+
+	--color-violet-300: var(--primary-violet-300);
+	--color-violet-500: var(--primary-violet-500);
+	--color-violet-700: var(--primary-violet-700);
+	--color-violet-900: var(--primary-violet-900);
+
+	/* — Thunderbird chrome variables — */
+	--background-color-canvas: light-dark(var(--primary-white), var(--primary-gray-90));
+	--noise-image: var(--noise-texture);
+	--lwt-accent-color: var(--lwt-accent);
+	--sidebar-text-color: var(--sidebar-text);
+	--sidebar-background-color: var(--sidebar-bg);
+	--toolbar-bgcolor: var(--toolbar-bg);
+
+	--button-bgcolor: transparent;
+	--button-hover-bgcolor: transparent;
+	--button-active-bgcolor: transparent;
+	--button-primary-bgcolor: var(--btn-pill-bg);
+	--button-primary-hover-bgcolor: var(--btn-pill-hover-bg);
+	--button-primary-active-bgcolor: var(--btn-pill-active-bg);
+	--button-primary-color: var(--btn-pill-color);
+
+	--error-text-color: var(--primary-red-300);
+
+	--input-bgcolor: var(--input-bg);
+	--input-color: var(--text-primary);
+	--input-border-color: var(--input-border);
+
+	--autocomplete-popup-separator-color: var(--border-default);
+
+	--panel-banner-item-update-supported-bgcolor: var(--primary-green-300);
+	--panel-banner-item-info-icon-bgcolor: var(--primary-blue-300);
+
+	--lwt-tabs-border-color: transparent;
+	--sidebar-border-color: var(--border-default);
+
+	--checkbox-border-color: var(--border-default);
+	--checkbox-unchecked-bgcolor: var(--surface-1);
+	--checkbox-unchecked-hover-bgcolor: var(--surface-0);
+	--checkbox-unchecked-active-bgcolor: var(--primary-gray-50);
+	--checkbox-checked-border-color: var(--border-rgba-subtle);
+	--checkbox-checked-color: var(--text-inverse);
+	--checkbox-checked-bgcolor: var(--primary-green-500);
+	--checkbox-checked-hover-bgcolor: var(--primary-green-700);
+	--checkbox-checked-active-bgcolor: var(--primary-green-900);
+
+	--toolbarbutton-border-radius: 16px;
+	--toolbarbutton-hover-background: var(--btn-pill-hover-bg);
+	--toolbarbutton-hover-bordercolor: var(--border-rgba-subtle);
+	--toolbarbutton-header-bordercolor: var(--border-rgba-subtle);
+	--toolbarbutton-active-background: var(--btn-pill-active-bg);
+	--toolbarbutton-active-bordercolor: var(--border-rgba-moderate);
+	--toolbarbutton-active-boxshadow: var(--shadow-pill-active);
+	--toolbarbutton-checked-background: var(--selection-bg);
+	--toolbarbutton-icon-fill-attention: var(--icon-attention);
+
+	--toolbarseparator-color: var(--splitter-color);
+
+	--toolbar-field-focus-border-color: var(--input-focus-border);
+	--toolbar-field-highlight: var(--selection-bg);
+	--toolbar-field-highlight-color: var(--selection-bg);
+
+	--item-focus-selected-border-color: var(--border-default);
+	--default: var(--primary-highlight-violet);
+	--primary: var(--primary-highlight-violet);
+
+	/* — Second variables block (merged) — */
+	--autocomplete-popup-url-color: -moz-nativehyperlinktext;
+	--tabline-color: var(--border-default);
+	--glassShadowColor: hsla(240, 5%, 5%, 0.3);
+	--new-folder-color: -moz-hyperlinktext;
+	--noselect-folder-color: GrayText;
+	--toolbar-non-lwt-bgcolor: -moz-dialog;
+	--toolbar-non-lwt-textcolor: -moz-dialogText;
+	--toolbar-non-lwt-bgimage: transparent;
+	--chrome-content-separator-color: ThreeDShadow;
+	--row-grouped-header-bg-color: var(--surface-1);
+	--row-grouped-header-bg-color-selected: var(--surface-1);
+	--panel-separator-color: var(--border-default);
+	--splitter-color: var(--splitter-color);
+}
+
+@media (-moz-windows-default-theme) {
+	:root {
+		--lwt-tabs-border-color: transparent;
+		--tabline-color: var(--border-default);
+		--toolbar-non-lwt-bgcolor: #f9f9fa;
+		--toolbar-non-lwt-textcolor: #0c0c0d;
+		--toolbar-non-lwt-bgimage: none;
+		--panel-separator-color: var(--border-default);
+		--autocomplete-popup-url-color: var(--text-secondary);
+		--splitter-color: var(--border-default);
+		--select-focus-text-color: var(--text-primary);
+	}
+}
+
+/*————————————————————————————————————————————————————————
+                    Global Element Styles
+————————————————————————————————————————————————————————*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: bold;
+}
+
+html,
+body,
+#preferencesTabWrapper0 {
+	background: var(--surface);
+	color: var(--text);
+}
+
+
+
+checkbox,
+.checkbox-check {
+	border-radius: 3px;
+}
+
+.remote-gloda-search-container {
+	margin: 4px;
+}
+
+*::selection,
+body::selection,
+body div::selection {
+	color: var(--selection-text);
+	background: var(--selection-bg);
+}
+
+menulist {
+	margin: 6px 6px;
+}
+
+xul|separator:not([orient="vertical"]) {
+	display: none;
+}
+
+/* biome-ignore lint/style/noUnknownTypeSelectors: toolbarbutton is a valid XUL element in Thunderbird */
+toolbarbutton:hover,
+toolbarbutton:hover:active {
+	cursor: pointer;
+}
+
+/*————————————————————————————————————————————————————————
+                    LW-theme Contexts
+————————————————————————————————————————————————————————*/
+
+:root:-moz-lwtheme {
+	--lwt-text-color: var(--lwt-text);
+	color: var(--lwt-text);
+	--button-background: var(--btn-pill-bg);
+	--button-background-hover: var(--btn-pill-hover-bg);
+	--button-background-active: var(--btn-pill-active-bg);
+	--toolbar-color: var(--lwt-text-color, inherit);
+	--toolbar-bgcolor: var(--lwt-toolbar-bg);
+	--toolbar-bgimage: none;
+	--toolbarbutton-icon-fill-opacity: 1;
+	--autocomplete-popup-url-color: var(--text-primary);
+	--toolbar-field-background-color: var(--toolbar-field-bg);
+	--toolbar-field-border-color: var(--toolbar-field-border);
+}
+
+:root[lwt-tree] {
+	--splitter-color: var(--splitter-color);
+	--new-focused-folder-color: var(--sidebar-highlight-text);
+	--row-grouped-header-bg-color: var(--surface-4);
+	--row-grouped-header-bg-color-selected: var(--surface-3);
+	--sidebar-highlight-background-color: var(--sidebar-highlight-bg);
+}
+
+#FindToolbar:-moz-lwtheme,
+.themeable-full:-moz-lwtheme,
+.themeable-brighttext:-moz-lwtheme {
+	--toolbarbutton-hover-background: var(--btn-pill-hover-bg);
+	--toolbarbutton-hover-bordercolor: var(--border-rgba-subtle);
+	--toolbarbutton-active-background: var(--btn-pill-active-bg);
+	--toolbarbutton-active-bordercolor: var(--border-rgba-moderate);
+	--toolbarbutton-active-boxshadow: var(--shadow-pill-active);
+	--toolbarbutton-checked-background: var(--primary-blue-300);
+}
+
+/*————————————————————————————————————————————————————————
+                    Override Thunderbird's @layer tokens-foundation
+————————————————————————————————————————————————————————*/
+@layer {
+	:root,
+	:host(.anonymous-content-host) {
+		--background-color-canvas: light-dark(var(--primary-white), var(--primary-gray-90));
+		--color-accent-primary: light-dark(var(--primary-blue-700), var(--primary-blue-300));
+		--color-accent-primary-hover: light-dark(var(--primary-blue-900), var(--primary-blue-500));
+		--color-accent-primary-active: light-dark(var(--primary-blue-900), var(--primary-blue-700));
+	}
+
+}

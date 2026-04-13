@@ -1,0 +1,109 @@
+{
+	"name": "WashiBird",
+	"author": "Dmitrii Dark (psychosomat)",
+	"description": "Relaxed, soft theme for Thunderbird without anything unnecessary. Available in Light or Dark Mode. (This is a theme built as an extension, please read the Complete Guide to Installing WashiBird for Thunderbird)",
+	"version": "1.0",
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "washibird@psychosomat.dev",
+			"strict_min_version": "128.0"
+		}
+	},
+	"icons": {
+		"64": "icon.png"
+	},
+	"manifest_version": 2,
+	"theme_experiment": {
+		"stylesheet": "content/skin/messenger.css",
+		"colors": {
+			"primary_whiter": "--primary-whiter",
+			"primary_white": "--primary-white",
+			"primary_gray_10": "--primary-gray-10",
+			"primary_gray_20": "--primary-gray-20",
+			"primary_gray_30": "--primary-gray-30",
+			"primary_gray_40": "--primary-gray-40",
+			"primary_gray_50": "--primary-gray-50",
+			"primary_gray_60": "--primary-gray-60",
+			"primary_gray_70": "--primary-gray-70",
+			"primary_gray_80": "--primary-gray-80",
+			"primary_gray_90": "--primary-gray-90",
+			"primary_gray_100": "--primary-gray-100",
+			"primary_black": "--primary-black",
+			"primary_blacker": "--primary-blacker",
+			"primary_red_300": "--primary-red-300",
+			"primary_red_500": "--primary-red-500",
+			"primary_red_700": "--primary-red-700",
+			"primary_red_900": "--primary-red-900",
+			"primary_orange_300": "--primary-orange-300",
+			"primary_orange_500": "--primary-orange-500",
+			"primary_orange_700": "--primary-orange-700",
+			"primary_orange_900": "--primary-orange-900",
+			"primary_yellow_300": "--primary-yellow-300",
+			"primary_yellow_500": "--primary-yellow-500",
+			"primary_yellow_700": "--primary-yellow-700",
+			"primary_yellow_900": "--primary-yellow-900",
+			"primary_green_300": "--primary-green-300",
+			"primary_green_500": "--primary-green-500",
+			"primary_green_700": "--primary-green-700",
+			"primary_green_900": "--primary-green-900",
+			"primary_blue_300": "--primary-blue-300",
+			"primary_blue_500": "--primary-blue-500",
+			"primary_blue_700": "--primary-blue-700",
+			"primary_blue_900": "--primary-blue-900",
+			"primary_violet_300": "--primary-violet-300",
+			"primary_violet_500": "--primary-violet-500",
+			"primary_violet_700": "--primary-violet-700",
+			"primary_violet_900": "--primary-violet-900",
+			"primary_highlight_red": "--primary-highlight-red",
+			"primary_highlight_orange": "--primary-highlight-orange",
+			"primary_highlight_yellow": "--primary-highlight-yellow",
+			"primary_highlight_green": "--primary-highlight-green",
+			"primary_highlight_blue": "--primary-highlight-blue",
+			"primary_highlight_violet": "--primary-highlight-violet"
+		}
+	},
+	"options_ui": {
+		"page": "content/options/options.html"
+	},
+	"background": {
+		"scripts": [
+			"content/scripts/loadTheme.js",
+			"content/scripts/loadBlockquotes/debug.js",
+			"content/scripts/loadBlockquotes/variables.js",
+			"content/scripts/loadBlockquotes/reloadVariables.js",
+			"content/scripts/loadBlockquotes/compose.js",
+			"content/scripts/loadBlockquotes/loadBlockquotes.js",
+			"content/scripts/loadBlockquotes/msgDisplay.js"
+		]
+	},
+	"permissions": [
+		"messagesRead",
+		"messagesModify",
+		"compose",
+		"storage",
+		"tabs",
+		"theme",
+		"commands"
+	],
+	"commands": {
+		"toggle-all-quotes": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+Q"
+			},
+			"description": "Toggle all quotes"
+		},
+		"collapse-one-more-level": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+Left"
+			},
+			"description": "Collapse quotes one more level"
+		},
+		"expand-one-more-level": {
+			"suggested_key": {
+				"default": "Ctrl+Shift+Right"
+			},
+			"description": "Expand quotes one more level"
+		}
+	},
+	"web_accessible_resources": ["content/skin/*.css"]
+}

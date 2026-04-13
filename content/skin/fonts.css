@@ -1,0 +1,37 @@
+/* Typography tokens */
+:root {
+	--font-heading: "Rubik", sans-serif;
+	--font-medium: "Overlock", sans-serif;
+	--font-body: "Chivo", sans-serif;
+	--default-font: var(--font-body);
+	font-family: var(--default-font);
+}
+
+* {
+	font-family: var(--default-font);
+	text-shadow: none;
+	font-feature-settings: "cv01", "cv05", "cv06", "cv11";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.title,
+.titlebar-label,
+.sidebar-header,
+.folderPane-header,
+label[value="true"] {
+	font-family: var(--font-heading);
+}
+
+button,
+.button-flat,
+.tabmail-tab,
+.titlebar-button,
+.toolbarbutton-1,
+.toolbarbutton-menubutton-button,
+.button-appmenu {
+	font-family: var(--font-medium);
+}

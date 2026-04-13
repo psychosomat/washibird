@@ -1,0 +1,37 @@
+/*————————————————————————————————————————————————————————
+                    Quick Filter Bar
+  All color-scheme differences handled by tokens.css.
+————————————————————————————————————————————————————————*/
+
+:root #quick-filter-bar,
+:root[lwt-tree] #quick-filter-bar,
+:root[lwt-tree] #quick-filter-bar:-moz-lwtheme {
+	background-color: var(--surface-1);
+	color: var(--text-secondary);
+}
+
+#quick-filter-bar-expando {
+	--chrome-content-separator-color: var(--border-default);
+}
+
+toolbarseparator {
+	display: none;
+}
+
+#quick-filter-bar[filterActive="matches"] #qfb-results-label {
+	color: var(--primary-green-700);
+}
+
+#quick-filter-bar[filterActive="nomatches"] #qfb-results-label {
+	color: var(--primary-red-300);
+}
+
+/* Filter Messages by */
+#quick-filter-bar-filter-text-bar
+	.toolbarbutton-1:not([type="menu-button"], [disabled="true"]):is(
+		[open="true"],
+		[checked="true"],
+		:hover:active
+	) {
+	color: var(--accent-3);
+}

@@ -1,0 +1,428 @@
+/*————————————————————————————————————————————————————————
+                    Calendar Views
+  All color-scheme differences handled by tokens.css.
+————————————————————————————————————————————————————————*/
+
+:root,
+body,
+div {
+	--viewColor: var(--cal-text);
+	--viewBackground: var(--cal-surface);
+	--viewBorderColor: var(--cal-border);
+
+	--viewCalendarHeaderBackground: rgba(0, 0, 0, 0.03);
+	--viewHighlightBorderColor: var(--cal-border);
+
+	--viewTodayBorderColor: transparent;
+	--viewTodayColor: var(--cal-text);
+	--viewTodayBackground: color-mix(
+		in srgb,
+		var(--primary-highlight-blue) 20%,
+		var(--cal-surface)
+	);
+	--viewTodayLabelColor: var(--cal-today-label);
+	--viewTodayLabelBackground: var(--primary-highlight-blue);
+	--viewTodayOffBackground: color-mix(
+		in srgb,
+		var(--primary-highlight-blue) 50%,
+		var(--cal-surface)
+	);
+	--viewTodayDayLabelBackground: color-mix(
+		in srgb,
+		var(--primary-highlight-blue) 20%,
+		var(--cal-surface)
+	);
+	--viewTodayWeekendBackground: var(--primary-green-300);
+
+	--viewWeekendBackground: color-mix(
+		in srgb,
+		var(--primary-highlight-green) 20%,
+		var(--cal-surface)
+	);
+
+	--viewHeaderSelectedBackground: color-mix(
+		in srgb,
+		var(--primary-highlight-yellow) 40%,
+		var(--cal-surface)
+	);
+
+	--viewDayBoxSelectedBackground: color-mix(
+		in srgb,
+		var(--primary-highlight-yellow) 50%,
+		var(--cal-surface)
+	);
+	--viewDayBoxOffSelectedBackground: color-mix(
+		in srgb,
+		var(--primary-highlight-yellow) 50%,
+		var(--cal-surface)
+	);
+	--viewDayBoxOtherSelectedBackground: color-mix(
+		in srgb,
+		var(--primary-highlight-yellow) 20%,
+		var(--cal-surface)
+	);
+
+	--viewMonthOtherBackground: var(--cal-month-other-bg);
+	--viewMonthDayBoxSelectedColor: var(--cal-selected-label);
+	--viewMonthDayBoxLabelColor: var(--cal-text-secondary);
+	--viewMonthDayOtherBackground: color-mix(
+		in srgb,
+		var(--primary-highlight-green) 20%,
+		var(--cal-surface)
+	);
+	--viewMonthDayOffLabelBackground: color-mix(
+		in srgb,
+		var(--primary-highlight-green) 50%,
+		var(--cal-surface)
+	);
+
+	--viewOffTimeBackground: color-mix(
+		in srgb,
+		var(--primary-highlight-blue) 40%,
+		var(--cal-surface)
+	);
+	--viewTimeBoxColor: var(--cal-text);
+
+	--viewDayLabelSelectedColor: var(--cal-day-selected-text);
+	--viewDayLabelSelectedBackground: var(--primary-highlight-violet);
+
+	--viewDragboxColor: -moz-dialogtext;
+	--viewDragboxBackground: var(--primary-highlight-orange);
+}
+
+#unifinder-closer .close-icon {
+	color: var(--text-inverse);
+	background: var(--accent-2-secondary);
+}
+
+#unifinder-closer .close-icon:hover {
+	color: var(--text-inverse);
+	background: var(--primary-red-500);
+}
+
+/* Mini Month Pane */
+calendar-minimonth,
+:root #calSidebar,
+.minimonth-month-box {
+	background: var(--cal-minimonth-bg);
+}
+
+#minimonth-pane {
+	color: var(--cal-text);
+}
+
+.minimonth-month-name,
+.minimonth-year-name {
+	color: var(--cal-text-secondary);
+}
+
+#minimonth-pane toolbarbutton {
+	color: var(--icon-default);
+}
+
+#minimonth-pane toolbarbutton:hover,
+#minimonth-pane toolbarbutton:hover:active {
+	color: var(--icon-hover);
+	background: transparent;
+}
+
+.minimonth-row-head {
+	font-weight: bold;
+	text-transform: uppercase;
+	color: var(--cal-text-secondary);
+}
+
+.minimonth-cal-box {
+	border-spacing: 4px;
+}
+
+td.minimonth-week,
+td.minimonth-day {
+	padding: 4px 5px;
+	border-radius: 3px;
+}
+
+.minimonth-week {
+	color: var(--text-muted);
+	background: transparent;
+	border: none;
+}
+
+.minimonth-day[interactive][today="true"] {
+	border: 1px solid var(--border-rgba-moderate);
+}
+
+.minimonth-day:hover[interactive] {
+	background: var(--cal-surface);
+	border: 1px solid var(--border-rgba-moderate);
+}
+
+.minimonth-day:hover:active[interactive] {
+	background: var(--cal-surface);
+	box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.1) inset;
+}
+
+.minimonth-day[othermonth="true"] {
+	color: var(--text-muted);
+	background: transparent;
+}
+
+.minimonth-day[selected="true"],
+.minimonth-day[selected="true"][today="true"] {
+	color: var(--cal-day-selected-text);
+	background: var(--cal-surface);
+	border: 1px solid var(--border-rgba-moderate);
+	box-shadow:
+		0px -2px 0px 0px rgba(100, 100, 100, 0.15) inset,
+		0px 1px 1px 0px rgba(0, 0, 0, 0.05);
+	transition: 50ms ease-in-out;
+}
+
+.minimonth-day[selected="true"]:hover,
+.minimonth-day[selected="true"][today="true"]:hover {
+	box-shadow:
+		0px 0px 0px 0px rgba(100, 100, 100, 0.1) inset,
+		0px 0px 1px 0px rgba(0, 0, 0, 0.1);
+	transition: 50ms ease-in-out;
+}
+
+/* Calendar List */
+.calendar-list-header {
+	color: var(--cal-text-secondary);
+	background: transparent;
+	border-top: 1px solid var(--cal-border);
+}
+
+checkbox.treenode-checkbox > .checkbox-check {
+	margin-left: 8px;
+}
+
+.toolbarbutton-1.calendar-list-create {
+	margin: 2px 8px;
+	border-radius: 26px;
+	background-color: var(--btn-pill-bg);
+	border: 1px solid var(--border-rgba-subtle);
+	box-shadow: var(--shadow-pill);
+}
+
+.toolbarbutton-1.calendar-list-create:hover {
+	background-color: var(--btn-pill-hover-bg);
+	border: 1px solid var(--border-rgba-subtle);
+	box-shadow: var(--shadow-pill);
+}
+
+.toolbarbutton-1.calendar-list-create:hover:active {
+	background-color: var(--btn-pill-active-bg);
+	border: 1px solid var(--border-rgba-moderate);
+	box-shadow: var(--shadow-pill-active);
+}
+
+#calendar-list > li {
+	color: var(--cal-text-secondary);
+	background-color: var(--cal-list-item-bg);
+	border: 1px solid transparent;
+	border-radius: 3px;
+	margin: 4px;
+}
+
+#calendar-list > li:hover {
+	border: 1px solid var(--cal-list-item-border);
+}
+
+#calendar-list > li.selected {
+	font-weight: bold;
+	border: 1px solid var(--cal-list-item-border);
+}
+
+#calendar-list > li > .calendar-name {
+	margin: 2px 8px;
+	color: var(--cal-list-item-text);
+}
+
+#calendar-list > li.selected > .calendar-name {
+	color: var(--cal-list-selected-text);
+}
+
+#calendar-list > li > button.calendar-enable-button {
+	color: var(--primary-green-900);
+	background: var(--primary-highlight-green);
+}
+
+/* Big Calendar */
+.navigation-inner-box {
+	color: var(--cal-nav-text);
+	padding: 8px;
+}
+
+.navigation-inner-box,
+.navigation-spacer-box {
+	border: none;
+}
+
+.navigation-spacer-box,
+.navigation-bottombox {
+	display: none;
+}
+
+#calendarWeek,
+#intervalDescription {
+	font-weight: bold;
+}
+
+#calendar-nav-control {
+	--calview-tabline-color: transparent;
+	--calview-border-bottom-color: transparent;
+}
+
+.navigation-inner-box toolbarbutton.previous-view-button,
+.navigation-inner-box toolbarbutton.next-view-button {
+	color: var(--cal-nav-text);
+}
+
+.navigation-inner-box toolbarbutton.previous-view-button:hover,
+.navigation-inner-box toolbarbutton.previous-view-button:hover:active,
+.navigation-inner-box toolbarbutton.next-view-button:hover,
+.navigation-inner-box toolbarbutton.next-view-button:hover:active {
+	color: var(--cal-nav-hover);
+	background: transparent;
+	box-shadow: none;
+}
+
+radio.calview {
+	border-radius: 4px;
+	margin: 4px 4px;
+}
+
+radio.calview:not([selected="true"]) {
+	color: var(--icon-default);
+	background: transparent;
+	border: 1px solid var(--icon-default);
+	font-weight: normal;
+}
+
+radio.calview:not([selected="true"]):hover,
+radio.calview:not([selected="true"]):hover:active {
+	color: var(--cal-nav-hover);
+	background: transparent;
+	border: 1px solid var(--cal-nav-hover);
+}
+
+radio.calview:nth-of-type(3n + 1)[selected="true"] {
+	color: var(--primary-yellow-700);
+	background: var(--cal-view-selected-bg);
+	border: 1px solid var(--primary-yellow-700);
+	box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.1) inset;
+	font-weight: normal;
+}
+
+radio.calview:nth-of-type(3n + 2)[selected="true"] {
+	color: var(--primary-red-500);
+	background: var(--cal-view-selected-bg);
+	border: 1px solid var(--primary-red-500);
+	box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.1) inset;
+	font-weight: normal;
+}
+
+radio.calview:nth-of-type(3n + 3)[selected="true"] {
+	color: var(--primary-blue-500);
+	background: var(--cal-view-selected-bg);
+	border: 1px solid var(--primary-blue-500);
+	box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.1) inset;
+	font-weight: normal;
+}
+
+calendar-month-view,
+calendar-multiweek-view {
+	padding: 0px 0px;
+}
+
+.monthtable :is(td, th) > * {
+	padding: 2px;
+}
+
+label.calendar-day-label-name {
+	margin-block: 5px 5px;
+}
+
+.calendar-month-day-box-dates {
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+/* Big Calendar Corner */
+.multiday-header-corner {
+	border-top: 1px solid var(--viewBorderColor);
+}
+
+/* Big Calendar - Month View */
+.calendar-month-day-box-other-month[selected="true"],
+.calendar-month-day-box-current-month[selected="true"] {
+	border-top: 2px solid var(--accent-1-secondary);
+	color: var(--cal-day-selected-text);
+}
+
+.monthtable
+	td
+	> :is(
+		.calendar-month-day-box-current-month[relation="today"],
+		.calendar-month-day-box-day-off[relation="today"],
+		.calendar-month-day-box-other-month[relation="today"]
+	) {
+	border-top: 2px solid var(--accent-3-secondary);
+	color: var(--cal-day-selected-text);
+}
+
+/* Big Calendar - Week View */
+.day-column-heading {
+	z-index: 3;
+}
+
+.day-column-heading span {
+	padding: 5px 5px;
+}
+
+/* Today Navigation */
+.today-navigation-button {
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+}
+
+.view-navigation-button {
+	margin-inline: 0px;
+}
+
+/* Event Box */
+calendar-month-day-box-item.calendar-color-box {
+	margin: 2px 2px;
+}
+
+calendar-month-day-box-item.calendar-color-box,
+calendar-event-box.calendar-color-box,
+calendar-editable-item.calendar-color-box {
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	box-shadow:
+		0px -2px 0px 0px rgba(100, 100, 100, 0.25) inset,
+		0px 1px 1px 0px rgba(0, 0, 0, 0.05);
+}
+
+calendar-month-day-box-item[selected="true"].calendar-color-box,
+calendar-event-box[selected="true"].calendar-color-box,
+calendar-editable-item[selected="true"].calendar-color-box {
+	background: hsl(43, 86%, 83%);
+	color: var(--cal-text);
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow:
+		0px -2px 0px 0px rgba(100, 100, 100, 0.25) inset,
+		0px 1px 1px 0px rgba(0, 0, 0, 0.05),
+		0px 0px 0px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* Timebar Now */
+.multiday-timebar-now-indicator {
+	background: var(--cal-timebar-color);
+}
+
+.multiday-grid:not(.multiday-grid-rotated) .timeIndicator {
+	border-block-start: 2px solid var(--cal-timebar-color);
+}

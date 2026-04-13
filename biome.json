@@ -1,0 +1,28 @@
+{
+	"linter": {
+		"rules": {
+			"a11y": {
+				"noSvgWithoutTitle": "off"
+			}
+		}
+	},
+	"css": {
+		"linter": {
+			"enabled": false
+		},
+		"formatter": {
+			"enabled": false
+		}
+	},
+	"files": {
+		"ignoreUnknown": false,
+		"includes": [
+			"**/*.js",
+			"**/*.jsx",
+			"**/*.ts",
+			"**/*.tsx",
+			"**/*.mjs",
+			"**/*.cjs"
+		]
+	}
+}

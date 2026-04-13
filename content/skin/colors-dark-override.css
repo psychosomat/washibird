@@ -1,0 +1,47 @@
+/* Force dark mode colors regardless of system setting */
+:root {
+	--primary-whiter: hsl(33, 66%, 90%) !important;
+	--primary-white: hsl(34, 50%, 80%) !important;
+	--primary-gray-10: hsl(34, 18%, 62%) !important;
+	--primary-gray-20: hsl(35, 27%, 55%) !important;
+	--primary-gray-30: hsl(34, 24%, 30%) !important;
+	--primary-gray-40: hsl(33, 22%, 30%) !important;
+	--primary-gray-50: hsl(33, 20%, 20%) !important;
+	--primary-gray-60: hsl(30, 19%, 17%) !important;
+	--primary-gray-70: hsl(27, 14%, 15%) !important;
+	--primary-gray-80: hsl(32, 19%, 13%) !important;
+	--primary-gray-90: hsl(30, 15%, 13%) !important;
+	--primary-gray-100: hsl(27, 15%, 12%) !important;
+	--primary-black: hsl(26, 16%, 9%) !important;
+	--primary-blacker: hsl(30, 20%, 8%) !important;
+	--primary-red-300: hsl(4, 100%, 68%) !important;
+	--primary-red-500: hsl(4, 65%, 60%) !important;
+	--primary-red-700: hsl(4, 90%, 61%) !important;
+	--primary-red-900: hsl(4, 77%, 38%) !important;
+	--primary-orange-300: hsl(22, 92%, 64%) !important;
+	--primary-orange-500: hsl(22, 92%, 57%) !important;
+	--primary-orange-700: hsl(21, 88%, 51%) !important;
+	--primary-orange-900: hsl(20, 80%, 41%) !important;
+	--primary-yellow-300: hsl(46, 91%, 69%) !important;
+	--primary-yellow-500: hsl(50, 100%, 46%) !important;
+	--primary-yellow-700: hsl(43, 100%, 42%) !important;
+	--primary-yellow-900: hsl(39, 92%, 33%) !important;
+	--primary-green-300: hsl(150, 66%, 53%) !important;
+	--primary-green-500: hsl(154, 52%, 49%) !important;
+	--primary-green-700: hsl(154, 61%, 39%) !important;
+	--primary-green-900: hsl(155, 81%, 24%) !important;
+	--primary-blue-300: hsl(198, 39%, 56%) !important;
+	--primary-blue-500: hsl(198, 62%, 57%) !important;
+	--primary-blue-700: hsl(198, 57%, 55%) !important;
+	--primary-blue-900: hsl(198, 75%, 35%) !important;
+	--primary-violet-300: hsl(256, 63%, 74%) !important;
+	--primary-violet-500: hsl(263, 60%, 67%) !important;
+	--primary-violet-700: hsl(256, 52%, 57%) !important;
+	--primary-violet-900: hsl(256, 44%, 50%) !important;
+	--primary-highlight-red: hsla(350, 84%, 63%, 0.2) !important;
+	--primary-highlight-orange: hsla(27, 100%, 50%, 0.2) !important;
+	--primary-highlight-yellow: hsla(44, 100%, 50%, 0.2) !important;
+	--primary-highlight-green: hsla(74, 68%, 44%, 0.2) !important;
+	--primary-highlight-blue: hsla(186, 66%, 46%, 0.2) !important;
+	--primary-highlight-violet: hsla(236, 100%, 72%, 0.2) !important;
+}

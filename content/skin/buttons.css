@@ -1,0 +1,217 @@
+/*————————————————————————————————————————————————————————
+           Shared Button Patterns — uses tokens only
+  No @media dark block needed; tokens handle color scheme.
+————————————————————————————————————————————————————————*/
+
+/*————————————————————————————————————————————————————————
+                    Pill Buttons
+  Rounded, raised buttons with cartoon inset shadow.
+  Used in: message header, quick-filter bar, today pane, popups.
+————————————————————————————————————————————————————————*/
+
+/* Base */
+#messageHeader .toolbarbutton-1,
+/* biome-ignore lint/style/noUnknownTypeSelectors: toolbarbutton is a valid XUL element in Thunderbird */
+	#quick-filter-bar-main-bar
+	toolbarbutton,
+#todaypane-new-event-button:not([disabled="true"]),
+.popup-panel-buttons-container > button {
+	color: var(--btn-pill-color);
+	stroke: var(--btn-pill-color);
+	font-weight: bold;
+	background-color: var(--btn-pill-bg);
+	border: 1px solid var(--border-rgba-subtle);
+	border-radius: 8px;	box-shadow: var(--shadow-pill);
+}
+
+/* Hover */
+#messageHeader .toolbarbutton-1:hover,
+#quick-filter-bar-main-bar .toolbarbutton-1:not([checked="true"]):hover,
+#todaypane-new-event-button:not([disabled="true"]):hover,
+.popup-panel-buttons-container > button:hover {
+	color: var(--btn-pill-color);
+	stroke: var(--btn-pill-color);
+	background-color: var(--btn-pill-hover-bg);
+	border: 1px solid var(--border-rgba-subtle);
+	box-shadow: var(--shadow-pill);
+}
+
+/* Active / Pressed */
+#messageHeader .toolbarbutton-1:hover:active,
+#todaypane-new-event-button:not([disabled="true"]):hover:active,
+.popup-panel-buttons-container > button:hover:active {
+	background-color: var(--btn-pill-active-bg);
+	border: 1px solid var(--border-rgba-moderate);
+	box-shadow: var(--shadow-pill-active);
+}
+
+/* Checked (toggle) */
+#quick-filter-bar-main-bar toolbarbutton[checked="true"] {
+	color: var(--accent-3-dark);
+	stroke: var(--accent-3);
+	fill: color-mix(in srgb, currentColor 20%, transparent);
+}
+
+/* Checked: sticky button (red accent) */
+#quick-filter-bar-main-bar #qfb-sticky.toolbarbutton-1[checked="true"] {
+	stroke: var(--primary-red-300);
+	fill: var(--primary-highlight-red);
+}
+
+/* Generic toolbarbutton active state (shared by pill + flat) */
+.toolbarbutton-1
+> .toolbarbutton-menubutton-button:not([disabled="true"]):hover:active,
+.toolbarbutton-1[open="true"]
+	> .toolbarbutton-menubutton-dropmarker:not([disabled="true"]),
+.toolbarbutton-1:not([type="menu-button"], [disabled="true"]):is(
+		[open="true"],
+		[checked="true"],
+		:hover:active
+	) {
+	background-color: var(--btn-pill-active-bg);
+	border: 1px solid var(--border-rgba-moderate);
+	box-shadow: var(--shadow-pill-active);
+}
+
+/* Sticky button: override active state to transparent */
+#qfb-sticky.toolbarbutton-1
+	> .toolbarbutton-menubutton-button:not([disabled="true"]):hover:active,
+#qfb-sticky.toolbarbutton-1[open="true"]
+	> .toolbarbutton-menubutton-dropmarker:not([disabled="true"]),
+#qfb-sticky.toolbarbutton-1:not([type="menu-button"], [disabled="true"]):is(
+		[open="true"],
+		[checked="true"],
+		:hover:active
+	) {
+	background-color: transparent;
+	border-color: transparent;
+	box-shadow: none;
+}
+
+/* Message header view buttons: transparent borders */
+#messageHeader:not(.message-header-buttons-only-icons)
+	.toolbarbutton-1.message-header-view-button:not([type="menu-button"]),
+#messageHeader:not(.message-header-buttons-only-icons)
+	.toolbarbutton-1.message-header-view-button
+	> .toolbarbutton-menubutton-button,
+#messageHeader:not(.message-header-buttons-only-icons)
+	.toolbarbutton-1.message-header-view-button
+	> .toolbarbutton-menubutton-dropmarker,
+#headingWrapper .toolbarbutton-1.message-header-view-button {
+	border-color: transparent;
+}
+
+#messageHeader:not(.message-header-buttons-only-icons)
+	.toolbarbutton-1.message-header-view-button:not([disabled="true"]):is(
+		:hover,
+		[open]
+	)
+	> .toolbarbutton-menubutton-button,
+#messageHeader:not(.message-header-buttons-only-icons)
+	.toolbarbutton-1.message-header-view-button:not([disabled="true"]):is(
+		:hover,
+		[open]
+	)
+	> .toolbarbutton-menubutton-dropmarker,
+#messageHeader:not(.message-header-buttons-only-icons)
+	.toolbarbutton-1.message-header-view-button:not(
+		[type="menu-button"],
+		[disabled="true"],
+		[checked="true"],
+		[open],
+		:active
+	):hover,
+#messageHeader:not(.message-header-buttons-only-icons)
+	.toolbarbutton-1.message-header-view-button:not(
+		[buttonover],
+		[open],
+		:active
+	):hover
+	> .toolbarbutton-menubutton-dropmarker:not([disabled]),
+#headingWrapper .toolbarbutton-1.message-header-view-button:hover {
+	border-color: transparent;
+}
+
+.message-header-view-button {
+	fill: transparent;
+}
+
+/*————————————————————————————————————————————————————————
+                    Flat Buttons
+  Transparent background, subtle hover/active states.
+  Used in: spaces toolbar, toolbar buttons, today pane nav.
+————————————————————————————————————————————————————————*/
+
+/* Today pane nav / close buttons */
+#today-pane-panel toolbarbutton {
+	color: var(--icon-default);
+}
+
+#today-pane-panel toolbarbutton:hover,
+.miniday-nav-buttons:not([disabled="true"]):hover,
+#miniday-dropdown-button:not([disabled="true"]):hover,
+#today-pane-panel toolbarbutton:hover:active,
+.miniday-nav-buttons:not([disabled="true"]):hover:active,
+#miniday-dropdown-button:not([disabled="true"]):hover:active {
+	color: var(--icon-hover);
+	background: transparent;
+	border-color: transparent;
+	box-shadow: none;
+}
+
+/* Close button (pill-shaped flat) */
+#today-pane-panel toolbarbutton.today-closebutton {
+	border-radius: 8px;}
+
+#today-pane-panel toolbarbutton.today-closebutton:hover {
+	color: var(--icon-hover);
+	background: var(--surface-4);
+}
+
+#today-pane-panel toolbarbutton.today-closebutton:hover:active {
+	color: var(--text-secondary);
+	background: var(--border-default);
+}
+
+/*————————————————————————————————————————————————————————
+                    Star / Flag
+————————————————————————————————————————————————————————*/
+
+button.email-action-flagged.flagged {
+	fill: var(--primary-yellow-300);
+	stroke: var(--primary-yellow-900);
+}
+
+/*————————————————————————————————————————————————————————
+                    Filter Text Bar
+————————————————————————————————————————————————————————*/
+
+#quick-filter-bar-filter-text-bar
+	.toolbarbutton-1:not([type="menu-button"], [disabled="true"]):is(
+		[open="true"],
+		[checked="true"],
+		:hover:active
+	) {
+	color: var(--accent-3);
+}
+
+/*————————————————————————————————————————————————————————
+                    Dropdown (menulist)
+————————————————————————————————————————————————————————*/
+
+/* biome-ignore lint/style/noUnknownTypeSelectors: menulist is a valid XUL element in Thunderbird */
+menulist {
+	color: var(--text-primary);
+	background-color: var(--surface-0);
+	border: 1px solid var(--border-default);
+	transition: 50ms ease-in-out;
+}
+
+menulist[open="true"],
+menulist:not([disabled="true"], [open="true"]):hover,
+menulist[open="true"]:not([disabled="true"]),
+menulist[open="true"]:hover:active {
+	transition: 50ms ease-in-out;
+	border: 1px solid var(--border-strong);
+	box-shadow: none;
+}

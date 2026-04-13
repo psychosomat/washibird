@@ -1,0 +1,238 @@
+/*————————————————————————————————————————————————————————
+                    Primary Toolbar
+  All color-scheme differences handled by tokens.css.
+————————————————————————————————————————————————————————*/
+
+.mail-toolbox:-moz-lwtheme,
+.contentTabToolbox:-moz-lwtheme {
+	color: var(--toolbar-text);
+	background-color: var(--toolbar-field-bg);
+	background-image: none;
+}
+
+.mail-toolbox::after,
+.contentTabToolbox::after {
+	--chrome-content-separator-color: var(--border-default);
+}
+
+.toolbarbutton-1,
+.toolbarbutton-menubutton-button {
+	margin: 6px 4px;
+}
+
+/*——————— Toolbar Buttons ———————*/
+.mail-toolbox .toolbarbutton-1:not(#button-getmsg, .button-appmenu) {
+	padding: 2px 10px 4px 10px;
+}
+
+.mail-toolbox .toolbarbutton-menubutton-button {
+	padding: 2px 5px 4px 10px;
+}
+
+.mail-toolbox .toolbarbutton-menubutton-dropmarker {
+	padding: 2px 10px 4px 5px;
+}
+
+.mail-toolbox .toolbarbutton-1:not(.qfb-tag-button),
+.mail-toolbox .toolbarbutton-menubutton-button {
+	--toolbarbutton-icon-fill: var(--btn-pill-icon);
+	color: var(--btn-pill-color);
+	font-weight: bold;
+}
+
+.mail-toolbox .toolbarbutton-1:not([type="menu-button"]) {
+	border-radius: 8px;}
+
+.mail-toolbox .toolbarbutton-1 > .toolbarbutton-menubutton-button {
+	border-top-left-radius: 16px;
+	border-bottom-left-radius: 16px;
+}
+
+/* Keep the chat status button pill shape consistent with toolbar controls. */
+.mail-toolbox
+#statusTypeIcon.toolbarbutton-1:not(#button-getmsg, .button-appmenu) {
+	border-radius: 8px;}
+
+.mail-toolbox .toolbarbutton-1 > .toolbarbutton-menubutton-button,
+.mail-toolbox .toolbarbutton-1:hover > .toolbarbutton-menubutton-button,
+.mail-toolbox .toolbarbutton-1:hover:active > .toolbarbutton-menubutton-button {
+	border-left: none;
+}
+
+.mail-toolbox .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
+	border-top-right-radius: 16px;
+	border-bottom-right-radius: 16px;
+}
+
+.mail-toolbox .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker,
+.mail-toolbox .toolbarbutton-1:hover > .toolbarbutton-menubutton-dropmarker,
+.mail-toolbox
+	.toolbarbutton-1:hover:active
+	> .toolbarbutton-menubutton-dropmarker {
+	border-left: none;
+}
+
+.mail-toolbox .toolbarbutton-1:not([type="menu-button"]),
+.mail-toolbox .toolbarbutton-1 > .toolbarbutton-menubutton-button,
+.mail-toolbox .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
+	background-color: var(--btn-pill-bg);
+	border: 1px solid var(--border-rgba-subtle);
+	box-shadow: var(--shadow-pill);
+}
+
+.mail-toolbox .toolbarbutton-1:hover:not([type="menu-button"]),
+.mail-toolbox .toolbarbutton-1:hover > .toolbarbutton-menubutton-button,
+.mail-toolbox .toolbarbutton-1:hover > .toolbarbutton-menubutton-dropmarker {
+	background-color: var(--btn-pill-hover-bg);
+	border: 1px solid var(--border-rgba-subtle);
+	box-shadow: var(--shadow-pill);
+}
+
+.mail-toolbox .toolbarbutton-1:hover:active:not([type="menu-button"]),
+.mail-toolbox .toolbarbutton-1:hover:active > .toolbarbutton-menubutton-button,
+.mail-toolbox
+	.toolbarbutton-1:hover:active
+	> .toolbarbutton-menubutton-dropmarker {
+	background-color: var(--btn-pill-active-bg);
+	border: 1px solid var(--border-rgba-moderate);
+	box-shadow: var(--shadow-pill-active);
+}
+
+.mail-toolbox
+	.toolbarbutton-1:hover:active:not([type="menu-button"], [disabled="true"]),
+.mail-toolbox
+	.toolbarbutton-1:not([type="menu-button"], [disabled="true"])[open="true"],
+.mail-toolbox
+	.toolbarbutton-1:hover:active
+	> .toolbarbutton-menubutton-button:not([disabled="true"]),
+.mail-toolbox
+	.toolbarbutton-1[open="true"]
+	> .toolbarbutton-menubutton-dropmarker:not([disabled="true"]) {
+	--toolbarbutton-active-background: var(--btn-pill-active-bg);
+}
+
+.mail-toolbox
+	.toolbarbutton-1:not([type="menu-button"], [disabled="true"]):is(
+		[open="true"],
+		[checked="true"],
+		:hover:active
+	) {
+	background-color: var(--accent-3-secondary);
+	border: 1px solid var(--border-rgba-subtle);
+	box-shadow: var(--shadow-pill);
+}
+
+.mail-toolbox .button-appmenu.toolbarbutton-1 {
+	--toolbarbutton-icon-fill: var(--icon-default);
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+}
+
+.mail-toolbox .button-appmenu.toolbarbutton-1:hover {
+	--toolbarbutton-icon-fill: var(--icon-hover);
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+}
+
+.mail-toolbox
+	.button-appmenu.toolbarbutton-1:hover:active:not(
+		[type="menu-button"],
+		[disabled="true"]
+	),
+.mail-toolbox
+	.button-appmenu.toolbarbutton-1:not(
+		[type="menu-button"],
+		[disabled="true"]
+	)[open="true"] {
+	--toolbarbutton-icon-fill: var(--icon-hover);
+	--toolbarbutton-active-background: transparent;
+	border: none;
+	box-shadow: none;
+}
+
+/* Remove ::before (border) on Get Messages */
+.toolbarbutton-1:not(:hover, :active, [open], [checked])
+> .toolbarbutton-menubutton-dropmarker::before,
+.toolbarbutton-1[disabled="true"]
+	> .toolbarbutton-menubutton-dropmarker::before {
+	display: none;
+}
+
+/*——————— Search Bar ———————*/
+#qfb-qs-textbox {
+	margin-right: 5px;
+}
+
+/* not working for some parts */
+.search-icon,
+.textbox-search-sign,
+.textbox-search-clear {
+	filter: brightness(0) saturate(100%) invert(98%) sepia(5%) saturate(3865%)
+		hue-rotate(314deg) brightness(95%) contrast(69%);
+}
+
+.gloda-search,
+.remote-gloda-search,
+:root .themeableSearchBox,
+:root[lwt-tree] .themeableSearchBox,
+#peopleSearchInput:not([focused="true"]),
+.gloda-search:-moz-lwtheme,
+.remote-gloda-search:-moz-lwtheme,
+:root[lwt-tree] .themeableSearchBox,
+#peopleSearchInput:not([focused="true"]):-moz-lwtheme,
+.statusMessageToolbarItem {
+	--toolbar-field-color: var(--search-text);
+	--toolbar-field-background-color: var(--search-bg);
+	--toolbar-field-border-color: var(--search-border);
+	box-shadow: none;
+	transition: 50ms ease-in-out;
+}
+
+.gloda-search:hover,
+.remote-gloda-search:hover,
+:root .themeableSearchBox:hover,
+:root[lwt-tree] .themeableSearchBox:hover,
+#peopleSearchInput:hover:not([focused="true"]),
+.gloda-search:-moz-lwtheme:hover,
+.remote-gloda-search:-moz-lwtheme:hover,
+:root[lwt-tree] .themeableSearchBox:hover,
+#peopleSearchInput:hover:not([focused="true"]):-moz-lwtheme,
+#chat-status-selector:hover > vbox > .statusMessageToolbarItem,
+.statusMessageToolbarItem:focus {
+	--toolbar-field-border-color: var(--search-hover-border);
+	transition: 50ms ease-in-out;
+}
+
+/* Search Bar on Focus */
+.gloda-search:focus,
+:root .themeableSearchBox:focus,
+:root .themeableSearchBox[focused="true"],
+:root[lwt-tree] .themeableSearchBox:focus,
+:root[lwt-tree] .themeableSearchBox[focused="true"],
+#peopleSearchInput[focused="true"],
+.remote-gloda-search[focused="true"],
+.gloda-search:-moz-lwtheme:focus,
+:root[lwt-tree] .themeableSearchBox:focus,
+:root[lwt-tree] .themeableSearchBox[focused="true"],
+#peopleSearchInput:-moz-lwtheme[focused="true"],
+.remote-gloda-search:-moz-lwtheme[focused="true"],
+.statusMessageToolbarItem[editing="true"],
+#chat-status-selector > vbox > .statusMessageToolbarItem[editing],
+.statusMessageToolbarItem:-moz-lwtheme:focus {
+	--toolbar-field-focus-color: var(--search-focus-text);
+	--toolbar-field-focus-background-color: var(--search-focus-bg);
+	border: 1px solid var(--search-focus-border);
+	box-shadow: 0px 0px 0px 3px var(--search-focus-ring);
+	transition: 50ms ease-in-out;
+}
+
+.gloda-search:focus,
+.searchBox[focused="true"],
+.themeableSearchBox:not([disabled="true"]):focus,
+.themeableSearchBox:not([disabled="true"])[focused="true"],
+#chat-status-selector > vbox > .statusMessageToolbarItem[editing],
+.statusMessageToolbarItem:-moz-lwtheme:focus {
+	outline: none;
+}

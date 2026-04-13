@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>WashiBird Theme Preferences</title>
+	<link rel="stylesheet" href="../skin/colors.css" />
+	<link rel="stylesheet" href="../skin/tokens.css" />
+	<link rel="stylesheet" href="../skin/fonts.css" />
+	<link rel="stylesheet" href="options.css" />
+</head>
+<body>
+	<main class="panel">
+		<h1>WashiBird Theme</h1>
+		<div class="setting-row">
+			<label for="themeMode">Color mode</label>
+			<select id="themeMode">
+				<option value="system">System (auto)</option>
+				<option value="light">Light</option>
+				<option value="dark">Dark</option>
+			</select>
+		</div>
+		<p class="status" id="status" role="status" aria-live="polite"></p>
+	</main>
+	<script src="options.js"></script>
+</body>
+</html>
