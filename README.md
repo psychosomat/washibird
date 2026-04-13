@@ -4,7 +4,7 @@
 
 ## Thunderbird Theme
 
-![License](https://img.shields.io/github/license/psychosomat/primary-addontheme_thunderbird_v1-0?style=for-the-badge&labelColor=24283b&color=24283b)
+![License](https://img.shields.io/github/license/psychosomat/washibird?style=for-the-badge&labelColor=24283b&color=24283b)
 ![Thunderbird](https://img.shields.io/badge/Thunderbird-128+-24283b?style=for-the-badge&logo=thunderbird)
 
 A relaxed, soft theme for Thunderbird featuring neat pastel colours with a subtle cartoon effect. The theme brings a modern, contemporary design to your email client while maintaining a clean and focused user experience.
