@@ -6,7 +6,8 @@
 	"browser_specific_settings": {
 		"gecko": {
 			"id": "washibird@psychosomat.dev",
-			"strict_min_version": "128.0"
+			"strict_min_version": "128.0",
+			"strict_max_version": "128.*"
 		}
 	},
 	"icons": {
@@ -77,13 +78,9 @@
 		]
 	},
 	"permissions": [
-		"messagesRead",
-		"messagesModify",
-		"compose",
 		"storage",
 		"tabs",
-		"theme",
-		"commands"
+		"theme"
 	],
 	"commands": {
 		"toggle-all-quotes": {
