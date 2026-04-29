@@ -2,12 +2,12 @@
 	"name": "WashiBird",
 	"author": "Dmitrii Dark (psychosomat)",
 	"description": "Relaxed, soft theme for Thunderbird without anything unnecessary. Available in Light or Dark Mode. (This is a theme built as an extension, please read the Complete Guide to Installing WashiBird for Thunderbird)",
-	"version": "1.1",
+	"version": "1.2",
 	"browser_specific_settings": {
 		"gecko": {
 			"id": "washibird@psychosomat.dev",
 			"strict_min_version": "128.0",
-			"strict_max_version": "149.*"
+			"strict_max_version": "150.*"
 		}
 	},
 	"icons": {

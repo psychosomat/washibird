@@ -144,10 +144,9 @@ var _ComposeCssObj = {
 			sBlockquoteSelector +
 			sBlockquoteSelector +
 			sBlockquoteSelector +
-			sBlockquoteSelector +
 			sBlockquoteSelector;
 
-		ComposeCssObj.bGraphQuotEn = true;
+		this.bGraphQuotEn = true;
 
 		// Start "prefers-color-scheme: dark" for Darkmode
 		sPrimaryDarkCSS += "@media (prefers-color-scheme: dark) {\n";

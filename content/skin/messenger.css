@@ -242,10 +242,11 @@ toolbarbutton:not([label]) .toolbarbutton-text {
 	display: none;
 }
 
-/* Text-only buttons (no icon) */
-toolbarbutton:not([image]):not([src]) .toolbarbutton-icon {
+/* Text-only buttons (no icon) - only hide if explicitly marked as text-only */
+toolbarbutton.text-only .toolbarbutton-icon {
 	display: none;
 }
+
 
 .toolbarbutton-1:not([type="menu-button"], [disabled="true"]),
 .toolbarbutton-1 > .toolbarbutton-menubutton-button,

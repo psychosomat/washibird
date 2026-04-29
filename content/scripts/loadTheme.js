@@ -216,6 +216,13 @@ async function injectCssIntoAllTabs(mode) {
 let msgDisplayRegistration = null;
 
 async function registerMessageDisplayCss(mode) {
+	if (!messenger.messageDisplayScripts) {
+		console.log(
+			"[PrimaryDebug] messenger.messageDisplayScripts not available, skipping message display CSS registration",
+		);
+		return;
+	}
+
 	if (msgDisplayRegistration) {
 		try {
 			const reg = await msgDisplayRegistration;

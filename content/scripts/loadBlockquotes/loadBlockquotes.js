@@ -18,6 +18,13 @@ async function registerComposeCss(cssCode) {
 }
 
 async function registerMessageDisplayScripts() {
+	if (!messenger.messageDisplayScripts) {
+		console.log(
+			"[PrimaryDebug] messenger.messageDisplayScripts not available, skipping message display scripts registration",
+		);
+		return;
+	}
+
 	if (messageDisplayRegistration) {
 		await messageDisplayRegistration.unregister();
 	}
